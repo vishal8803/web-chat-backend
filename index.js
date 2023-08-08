@@ -5,7 +5,8 @@ const csv = require('csv-parser');
 const db = require('./Database/DBConnection')
 const questionModel = require('./Database/QuestionModel');
 const questionRouter = require('./Routers/questionRouter');
-const answerRouter = require('./Routers/answerRouter')
+const answerRouter = require('./Routers/answerRouter');
+const emailToAgentIdRouter = require('./Routers/emailToAgentIdRouter');
 
 
 
@@ -17,6 +18,7 @@ app.listen(3000);
 app.use(express.json());
 app.use('/questions', questionRouter);
 app.use('/answer', answerRouter);
+app.use('/getId', emailToAgentIdRouter);
 
 
 // Code to insert csv data into database, I have once runed it.
